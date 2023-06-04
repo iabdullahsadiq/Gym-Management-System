@@ -13,6 +13,8 @@ public class Home extends javax.swing.JFrame {
      * Creates new form Home
      */
     public Home() {
+        //this.setSize(800,600);
+        this.setLocationRelativeTo(null);
         initComponents();
     }
 
@@ -39,6 +41,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
