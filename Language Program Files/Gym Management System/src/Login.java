@@ -20,7 +20,10 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        incorrectUPLbl.setVisible(false);
+        this.setSize(800,600);
+        this.setLocationRelativeTo(null);
+        incorrectUNLbl.setVisible(false);
+        incorrectPWLbl.setVisible(false);
     }
 
     /**
@@ -33,41 +36,46 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         closeBtn = new javax.swing.JButton();
-        loginHeadLbl = new javax.swing.JLabel();
-        incorrectUPLbl = new javax.swing.JLabel();
+        loginLbl = new javax.swing.JLabel();
+        incorrectUNLbl = new javax.swing.JLabel();
+        incorrectPWLbl = new javax.swing.JLabel();
         usernameTxt = new javax.swing.JTextField();
         passwordTxt = new javax.swing.JPasswordField();
+        MainheadLbl = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
-        showPassCb = new javax.swing.JCheckBox();
-        jLabel3 = new javax.swing.JLabel();
+        ShowPassCb = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        closeBtn.setBackground(new java.awt.Color(204, 204, 204));
         closeBtn.setForeground(new java.awt.Color(0, 118, 221));
-        closeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
+        closeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/close.png"))); // NOI18N
         closeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 closeBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(closeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, -1, -1));
+        getContentPane().add(closeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
-        loginHeadLbl.setFont(new java.awt.Font("Algerian", 1, 48)); // NOI18N
-        loginHeadLbl.setForeground(new java.awt.Color(0, 118, 221));
-        loginHeadLbl.setText("Login");
-        getContentPane().add(loginHeadLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, -1, -1));
+        loginLbl.setFont(new java.awt.Font("Britannic Bold", 1, 30)); // NOI18N
+        loginLbl.setForeground(new java.awt.Color(0, 118, 221));
+        loginLbl.setText("Login");
+        getContentPane().add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, -1, -1));
 
-        incorrectUPLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        incorrectUPLbl.setForeground(new java.awt.Color(255, 0, 0));
-        incorrectUPLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        incorrectUPLbl.setText("Incorrect Username or Password");
-        getContentPane().add(incorrectUPLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, -1, -1));
+        incorrectUNLbl.setFont(new java.awt.Font("Segoe UI", 1, 9)); // NOI18N
+        incorrectUNLbl.setForeground(new java.awt.Color(255, 0, 0));
+        incorrectUNLbl.setText("Incorrect Username!");
+        getContentPane().add(incorrectUNLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, 40));
 
-        usernameTxt.setBackground(new java.awt.Color(255, 255, 255));
-        usernameTxt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        incorrectPWLbl.setFont(new java.awt.Font("Segoe UI", 1, 9)); // NOI18N
+        incorrectPWLbl.setForeground(new java.awt.Color(255, 0, 0));
+        incorrectPWLbl.setText("Incorrect Password!");
+        getContentPane().add(incorrectPWLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, -1, 20));
+
+        usernameTxt.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         usernameTxt.setForeground(new java.awt.Color(0, 118, 221));
         usernameTxt.setText("Enter Username");
         usernameTxt.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -78,14 +86,9 @@ public class Login extends javax.swing.JFrame {
                 usernameTxtFocusLost(evt);
             }
         });
-        usernameTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTxtActionPerformed(evt);
-            }
-        });
-        getContentPane().add(usernameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 360, 304, -1));
+        getContentPane().add(usernameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 230, -1));
 
-        passwordTxt.setBackground(new java.awt.Color(255, 255, 255));
+        passwordTxt.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         passwordTxt.setForeground(new java.awt.Color(0, 118, 221));
         passwordTxt.setText("Enter Password");
         passwordTxt.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -96,82 +99,95 @@ public class Login extends javax.swing.JFrame {
                 passwordTxtFocusLost(evt);
             }
         });
-        getContentPane().add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 410, 304, -1));
+        getContentPane().add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 230, -1));
 
-        loginBtn.setBackground(new java.awt.Color(204, 204, 204));
+        MainheadLbl.setFont(new java.awt.Font("Britannic Bold", 1, 34)); // NOI18N
+        MainheadLbl.setForeground(new java.awt.Color(0, 118, 221));
+        MainheadLbl.setText("GYM Management System");
+        getContentPane().add(MainheadLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+
+        loginBtn.setBackground(new java.awt.Color(0, 118, 221));
         loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        loginBtn.setForeground(new java.awt.Color(0, 118, 221));
-        loginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
+        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, -1, -1));
+        getContentPane().add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 230, -1));
 
-        showPassCb.setBackground(new java.awt.Color(255, 255, 255));
-        showPassCb.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        showPassCb.setForeground(new java.awt.Color(0, 118, 221));
-        showPassCb.setText("Show Password");
-        showPassCb.addActionListener(new java.awt.event.ActionListener() {
+        ShowPassCb.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        ShowPassCb.setForeground(new java.awt.Color(0, 118, 221));
+        ShowPassCb.setText("Show Password");
+        ShowPassCb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showPassCbActionPerformed(evt);
+                ShowPassCbActionPerformed(evt);
             }
         });
-        getContentPane().add(showPassCb, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 460, -1, 30));
+        getContentPane().add(ShowPassCb, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login background.PNG"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login background.PNG"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, -90, 910, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ShowPassCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowPassCbActionPerformed
+        // TODO add your handling code here:
+        if (ShowPassCb.isSelected()){
+            passwordTxt.setEchoChar((char)0);
+        }
+        else{
+            passwordTxt.setEchoChar('*');
+        }
+    }//GEN-LAST:event_ShowPassCbActionPerformed
 
     private void usernameTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTxtFocusGained
         // TODO add your handling code here:
-        incorrectUPLbl.setVisible(false);
-        if(usernameTxt.getText().equals ("Enter Username")){
+        incorrectUNLbl.setVisible(false);
+        incorrectPWLbl.setVisible(false);
+        if(usernameTxt.getText().equals("Enter Username")){
             usernameTxt.setText("");
-            usernameTxt.setForeground(new Color(0,118,221));
+            usernameTxt.setForeground(new Color(0,118,221));       
         }
     }//GEN-LAST:event_usernameTxtFocusGained
 
     private void usernameTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTxtFocusLost
         // TODO add your handling code here:
-        incorrectUPLbl.setVisible(false);
-        if (usernameTxt.getText().equals ("")){
-            usernameTxt.setText("Enter Username");
+        incorrectUNLbl.setVisible(false);
+        incorrectPWLbl.setVisible(false);
+        if (usernameTxt.getText().equals("")){
+            usernameTxt.setText("Enter Username");   
             usernameTxt.setForeground(new Color(0,118,221));
         }
     }//GEN-LAST:event_usernameTxtFocusLost
 
     private void passwordTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTxtFocusGained
         // TODO add your handling code here:
-        incorrectUPLbl.setVisible(false);
-        if(passwordTxt.getText().equals ("Enter Password")){
+        incorrectUNLbl.setVisible(false);
+        incorrectPWLbl.setVisible(false);
+        if(passwordTxt.getText().equals("Enter Password")){
             passwordTxt.setText("");
-            passwordTxt.setForeground(new Color(0,118,221));
+            passwordTxt.setForeground(new Color(0,118,221));       
         }
-        
     }//GEN-LAST:event_passwordTxtFocusGained
 
     private void passwordTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTxtFocusLost
         // TODO add your handling code here:
-         incorrectUPLbl.setVisible(false);
-        if (passwordTxt.getText().equals ("")){
-            passwordTxt.setText("Enter Password");
+        incorrectUNLbl.setVisible(false);
+        incorrectPWLbl.setVisible(false);
+        if (passwordTxt.getText().equals("")){
+            passwordTxt.setText("Enter Password");   
             passwordTxt.setForeground(new Color(0,118,221));
         }
     }//GEN-LAST:event_passwordTxtFocusLost
 
-    private void usernameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTxtActionPerformed
-
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null,"Do you want to exit?", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null,"Do you want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0){
             System.exit(0);
         }
@@ -179,24 +195,26 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-        if (usernameTxt.getText().equals("iabdullahsadiq") && passwordTxt.getText().equals("81962")||usernameTxt.getText().equals("abdulwahabaslam") && passwordTxt.getText().equals("81988")){
+        if ((usernameTxt.getText().equals("iabdullah") && passwordTxt.getText().equals("81962")) || (usernameTxt.getText().equals("abdulwahabaslam") && passwordTxt.getText().equals("81988"))){
             setVisible(false);
             new Home().setVisible(true);
         }
-        else{
-            incorrectUPLbl.setVisible(true);
-        }
-    }//GEN-LAST:event_loginBtnActionPerformed
-
-    private void showPassCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassCbActionPerformed
-        // TODO add your handling code here:
-        if (showPassCb.isSelected()){
-            passwordTxt.setEchoChar((char)0);
+        else if (usernameTxt.getText().equals("iabdullah") || usernameTxt.getText().equals("abdulwahabaslam")){
+            incorrectUNLbl.setVisible(false);
         }
         else {
-            passwordTxt.setEchoChar('*');
+            incorrectUNLbl.setVisible(true);
         }
-    }//GEN-LAST:event_showPassCbActionPerformed
+        if (passwordTxt.getText().equals("81962") || passwordTxt.getText().equals("81988")){
+            incorrectPWLbl.setVisible(false);
+        }
+        else{
+            incorrectPWLbl.setVisible(true);
+        }
+        if ((usernameTxt.getText().equals("iabdullah") && passwordTxt.getText().equals("81988")) || (usernameTxt.getText().equals("abdulwahabaslam") && passwordTxt.getText().equals("81962"))){
+            incorrectPWLbl.setVisible(true);  
+        } 
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,13 +252,15 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel MainheadLbl;
+    private javax.swing.JCheckBox ShowPassCb;
     private javax.swing.JButton closeBtn;
-    private javax.swing.JLabel incorrectUPLbl;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel incorrectPWLbl;
+    private javax.swing.JLabel incorrectUNLbl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton loginBtn;
-    private javax.swing.JLabel loginHeadLbl;
+    private javax.swing.JLabel loginLbl;
     private javax.swing.JPasswordField passwordTxt;
-    private javax.swing.JCheckBox showPassCb;
     private javax.swing.JTextField usernameTxt;
     // End of variables declaration//GEN-END:variables
 }
