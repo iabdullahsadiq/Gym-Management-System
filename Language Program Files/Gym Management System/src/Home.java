@@ -20,6 +20,11 @@ public class Home extends javax.swing.JFrame {
         paymentBtn = new javax.swing.JButton();
         newMemberBtn = new javax.swing.JButton();
         logOutBtn = new javax.swing.JButton();
+        logoutLbl = new javax.swing.JLabel();
+        newMemberLbl = new javax.swing.JLabel();
+        paymentLbl = new javax.swing.JLabel();
+        listofMemberLbl = new javax.swing.JLabel();
+        upandDltLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -27,12 +32,12 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 118, 221));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 1, 40)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 1, 42)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Welcome to Gym Management System");
 
         upanddltBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update & delete member.png"))); // NOI18N
-        upanddltBtn.setPreferredSize(new java.awt.Dimension(75, 75));
+        upanddltBtn.setPreferredSize(new java.awt.Dimension(65, 65));
         upanddltBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 upanddltBtnActionPerformed(evt);
@@ -54,7 +59,7 @@ public class Home extends javax.swing.JFrame {
 
         listofMemBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/list of members.png"))); // NOI18N
         listofMemBtn.setMinimumSize(new java.awt.Dimension(85, 85));
-        listofMemBtn.setPreferredSize(new java.awt.Dimension(75, 75));
+        listofMemBtn.setPreferredSize(new java.awt.Dimension(65, 65));
         listofMemBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listofMemBtnActionPerformed(evt);
@@ -62,7 +67,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         paymentBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/payment.png"))); // NOI18N
-        paymentBtn.setPreferredSize(new java.awt.Dimension(75, 75));
+        paymentBtn.setPreferredSize(new java.awt.Dimension(65, 65));
         paymentBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paymentBtnActionPerformed(evt);
@@ -70,15 +75,39 @@ public class Home extends javax.swing.JFrame {
         });
 
         newMemberBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new member.png"))); // NOI18N
-        newMemberBtn.setPreferredSize(new java.awt.Dimension(75, 75));
+        newMemberBtn.setPreferredSize(new java.awt.Dimension(65, 65));
 
+        logOutBtn.setBackground(new java.awt.Color(0, 118, 221));
         logOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
-        logOutBtn.setPreferredSize(new java.awt.Dimension(75, 75));
+        logOutBtn.setBorder(null);
+        logOutBtn.setMaximumSize(new java.awt.Dimension(55, 55));
+        logOutBtn.setMinimumSize(new java.awt.Dimension(55, 55));
+        logOutBtn.setPreferredSize(new java.awt.Dimension(55, 55));
         logOutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutBtnMouseClicked(evt);
             }
         });
+
+        logoutLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        logoutLbl.setForeground(new java.awt.Color(255, 255, 255));
+        logoutLbl.setText("Logout");
+
+        newMemberLbl.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        newMemberLbl.setForeground(new java.awt.Color(255, 255, 255));
+        newMemberLbl.setText("New Member");
+
+        paymentLbl.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        paymentLbl.setForeground(new java.awt.Color(255, 255, 255));
+        paymentLbl.setText("Payments");
+
+        listofMemberLbl.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        listofMemberLbl.setForeground(new java.awt.Color(255, 255, 255));
+        listofMemberLbl.setText("List of Members");
+
+        upandDltLbl.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        upandDltLbl.setForeground(new java.awt.Color(255, 255, 255));
+        upandDltLbl.setText("Update or Delete Member");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,49 +116,65 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
-                                .addComponent(newMemberBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(118, 118, 118))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(paymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(19, 19, 19)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(upanddltBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(123, 123, 123)
-                                .addComponent(listofMemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(logOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(138, 138, 138)
+                        .addComponent(newMemberBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(upanddltBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(186, Short.MAX_VALUE))
+                        .addGap(131, 131, 131)
+                        .addComponent(newMemberLbl)
+                        .addGap(18, 18, 18)
+                        .addComponent(upandDltLbl)))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(paymentLbl)
+                    .addComponent(paymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(listofMemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(listofMemberLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(121, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(50, 50, 50))
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(648, 648, 648)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(logoutLbl))
+                            .addComponent(logOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exitBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logoutLbl)
+                .addGap(68, 68, 68)
                 .addComponent(jLabel1)
-                .addGap(75, 75, 75)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(upanddltBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(newMemberBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(listofMemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60)
+                    .addComponent(listofMemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(paymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(paymentBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logOutBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(133, 133, 133))
+                    .addComponent(upandDltLbl)
+                    .addComponent(newMemberLbl)
+                    .addComponent(paymentLbl)
+                    .addComponent(listofMemberLbl))
+                .addGap(205, 205, 205))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -174,7 +219,7 @@ public class Home extends javax.swing.JFrame {
 
     private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null,"Do you want to Logout?","Select",JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null,"Do you want to Exit?","Select",JOptionPane.YES_NO_OPTION);
         if (a == 0){
             System.exit(0);
         }
@@ -220,9 +265,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton listofMemBtn;
+    private javax.swing.JLabel listofMemberLbl;
     private javax.swing.JButton logOutBtn;
+    private javax.swing.JLabel logoutLbl;
     private javax.swing.JButton newMemberBtn;
+    private javax.swing.JLabel newMemberLbl;
     private javax.swing.JButton paymentBtn;
+    private javax.swing.JLabel paymentLbl;
+    private javax.swing.JLabel upandDltLbl;
     private javax.swing.JButton upanddltBtn;
     // End of variables declaration//GEN-END:variables
 }
