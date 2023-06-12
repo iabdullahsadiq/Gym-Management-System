@@ -1,3 +1,4 @@
+package GuiProject;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
