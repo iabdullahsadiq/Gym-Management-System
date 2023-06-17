@@ -78,6 +78,11 @@ public class Home extends javax.swing.JFrame {
 
         newMemberBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new member.png"))); // NOI18N
         newMemberBtn.setPreferredSize(new java.awt.Dimension(65, 65));
+        newMemberBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                newMemberBtnMouseClicked(evt);
+            }
+        });
 
         logOutBtn.setBackground(new java.awt.Color(0, 118, 221));
         logOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
@@ -226,6 +231,10 @@ public class Home extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_exitBtnMouseClicked
+
+    private void newMemberBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newMemberBtnMouseClicked
+        new NewMember().setVisible(true);
+    }//GEN-LAST:event_newMemberBtnMouseClicked
 
     /**
      * @param args the command line arguments
