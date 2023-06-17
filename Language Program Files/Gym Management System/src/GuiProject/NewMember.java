@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package GuiProject;
 
+package GuiProject;
+import java.sql.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,6 +8,20 @@ import javax.swing.JOptionPane;
  * @author ESHOP
  */
 public class NewMember extends javax.swing.JFrame {
+    
+    public static Connection getCon(){
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://loacalhost:3306/GMS","root","abdullah01");
+            return con;
+            
+        }
+        catch(Exception e){
+            
+            return null;
+        }
+    }
 
     /**
      * Creates new form NewMember
@@ -19,8 +30,26 @@ public class NewMember extends javax.swing.JFrame {
         initComponents();
         this.setSize(800,600);
         this.setLocationRelativeTo(null);
+        try{
+            int id = 01;
+            String str = String.valueOf(id);
+            idLbl.setText(str);
+            Connection con = getCon();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("Select max(id) from newMember");
+            while (rs.next()){
+                id = rs.getInt(01);
+                id = id + 1;
+                String str2 = String.valueOf(id);
+                idLbl.setText(str);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+            
+        }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -162,6 +191,11 @@ public class NewMember extends javax.swing.JFrame {
         saveBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveBtn.setForeground(new java.awt.Color(255, 255, 255));
         saveBtn.setText("Save");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveBtnActionPerformed(evt);
+            }
+        });
 
         addressLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         addressLbl.setForeground(new java.awt.Color(0, 118, 221));
@@ -336,6 +370,43 @@ public class NewMember extends javax.swing.JFrame {
             new Home().setVisible(true);
         }
     }//GEN-LAST:event_closeBtnActionPerformed
+
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        String id = idLbl.getText();
+        String name = nameTxt.getText();
+        String fatherName = fNameTxt.getText();
+        String gender = (String) genderCbox.getSelectedItem();
+        String age = ageTxt.getText();
+        String CNIC = cnicTxt.getText();
+        String mobileNo = numberTxt.getText();
+        String eMail = emailTxt.getText();
+        String address = addressTxt.getText();
+        String shift = (String) shiftCbox.getSelectedItem();
+        String monthlyFee = amountTxt.getText();
+        
+        try{
+            Connection con = getCon();
+            PreparedStatement ps = con.prepareStatement("Insert into newMember values (?,?,?,?,?,?,?,?,?,?,?)");
+            ps.setString (1,id);
+            ps.setString (2,name);
+            ps.setString (3,fatherName);
+            ps.setString (4,gender);
+            ps.setString (5,age);
+            ps.setString (6,CNIC);
+            ps.setString (7,mobileNo);
+            ps.setString (8,eMail);
+            ps.setString (9,address);
+            ps.setString (10,shift);
+            ps.setString (11,monthlyFee);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Successfully Saved");
+            setVisible(false);
+            new NewMember().setVisible(true);
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_saveBtnActionPerformed
 
     /**
      * @param args the command line arguments
