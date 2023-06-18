@@ -46,12 +46,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="closeBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -62,32 +56,33 @@
                                       <Component id="emailLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="addressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="timingLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="amountLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="fNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="cnicLbl" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="numberTxt" pref="237" max="32767" attributes="0"/>
-                                          <Component id="emailTxt" max="32767" attributes="0"/>
-                                          <Component id="addressTxt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="amountTxt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="shiftCbox" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="numberTxt" max="32767" attributes="0"/>
+                                      <Component id="emailTxt" max="32767" attributes="0"/>
+                                      <Component id="addressTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="amountTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="shiftCbox" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="fNameTxt" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="genderCbox" min="-2" pref="84" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="ageLbl" min="-2" pref="27" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="ageTxt" min="-2" pref="90" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="fNameTxt" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="genderCbox" min="-2" pref="84" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="ageLbl" min="-2" pref="27" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="ageTxt" min="-2" pref="90" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="nameTxt" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="nameTxt" alignment="0" max="32767" attributes="0"/>
                                       <Component id="cnicTxt" alignment="1" min="-2" pref="237" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="clearBtn" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="saveBtn" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -98,13 +93,13 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="clearBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                          <Component id="saveBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="closeBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="263" max="32767" attributes="0"/>
+                  <EmptySpace pref="284" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -170,15 +165,15 @@
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="amountLbl" min="-2" max="-2" attributes="0"/>
                       <Component id="amountTxt" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace pref="63" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="clearBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="saveBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -323,7 +318,7 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
-                <StringItem index="0" value="Gender"/>
+                <StringItem index="0" value="Select"/>
                 <StringItem index="1" value="Male"/>
                 <StringItem index="2" value="Female"/>
                 <StringItem index="3" value="Others"/>
@@ -464,7 +459,7 @@
             <Property name="text" type="java.lang.String" value="Shift"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="amountLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -495,7 +490,7 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="Select Shift"/>
+                <StringItem index="0" value="Select"/>
                 <StringItem index="1" value="05:00 AM - 08:00 AM"/>
                 <StringItem index="2" value="12:00 PM - 03:00 PM"/>
                 <StringItem index="3" value="06:00 PM - 09:00 PM"/>

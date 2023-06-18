@@ -40,6 +40,11 @@ public class Home extends javax.swing.JFrame {
 
         upanddltBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update & delete member.png"))); // NOI18N
         upanddltBtn.setPreferredSize(new java.awt.Dimension(65, 65));
+        upanddltBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                upanddltBtnMouseClicked(evt);
+            }
+        });
         upanddltBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 upanddltBtnActionPerformed(evt);
@@ -235,6 +240,10 @@ public class Home extends javax.swing.JFrame {
     private void newMemberBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newMemberBtnMouseClicked
         new NewMember().setVisible(true);
     }//GEN-LAST:event_newMemberBtnMouseClicked
+
+    private void upanddltBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_upanddltBtnMouseClicked
+        new UpdateDeleteMember().setVisible(true);
+    }//GEN-LAST:event_upanddltBtnMouseClicked
 
     /**
      * @param args the command line arguments

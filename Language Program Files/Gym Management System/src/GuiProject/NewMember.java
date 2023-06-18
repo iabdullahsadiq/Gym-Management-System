@@ -1,5 +1,5 @@
-
 package GuiProject;
+
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -8,17 +8,14 @@ import javax.swing.JOptionPane;
  * @author ESHOP
  */
 public class NewMember extends javax.swing.JFrame {
-    
-    public static Connection getCon(){
-        
-        try{
+
+    public static Connection getCon() {
+
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://loacalhost:3306/GMS","root","abdullah01");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/GMS", "root", "abdullah01");
             return con;
-            
-        }
-        catch(Exception e){
-            
+        } catch (Exception e) {
             return null;
         }
     }
@@ -28,28 +25,27 @@ public class NewMember extends javax.swing.JFrame {
      */
     public NewMember() {
         initComponents();
-        this.setSize(800,600);
+        this.setSize(800, 600);
         this.setLocationRelativeTo(null);
-        try{
+        try {
             int id = 01;
             String str = String.valueOf(id);
             idLbl.setText(str);
             Connection con = getCon();
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("Select max(id) from newMember");
-            while (rs.next()){
+            ResultSet rs = st.executeQuery("select max(id) from newMember");
+            while (rs.next()) {
                 id = rs.getInt(01);
                 id = id + 1;
                 String str2 = String.valueOf(id);
-                idLbl.setText(str);
+                idLbl.setText(str2);
             }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -83,7 +79,7 @@ public class NewMember extends javax.swing.JFrame {
         addressLbl = new javax.swing.JLabel();
         addressTxt = new javax.swing.JTextField();
         timingLbl = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        amountLbl = new javax.swing.JLabel();
         amountTxt = new javax.swing.JTextField();
         shiftCbox = new javax.swing.JComboBox<>();
 
@@ -154,7 +150,7 @@ public class NewMember extends javax.swing.JFrame {
 
         genderCbox.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         genderCbox.setForeground(new java.awt.Color(0, 118, 221));
-        genderCbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gender", "Male", "Female", "Others", "Prefer not to say" }));
+        genderCbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Male", "Female", "Others", "Prefer not to say" }));
 
         fNameLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         fNameLbl.setForeground(new java.awt.Color(0, 118, 221));
@@ -208,16 +204,16 @@ public class NewMember extends javax.swing.JFrame {
         timingLbl.setForeground(new java.awt.Color(0, 118, 221));
         timingLbl.setText("Shift");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 118, 221));
-        jLabel4.setText("Monthly Fee (Rs)");
+        amountLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        amountLbl.setForeground(new java.awt.Color(0, 118, 221));
+        amountLbl.setText("Monthly Fee (Rs)");
 
         amountTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         amountTxt.setForeground(new java.awt.Color(0, 118, 221));
 
         shiftCbox.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         shiftCbox.setForeground(new java.awt.Color(0, 118, 221));
-        shiftCbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Shift", "05:00 AM - 08:00 AM", "12:00 PM - 03:00 PM", "06:00 PM - 09:00 PM" }));
+        shiftCbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "05:00 AM - 08:00 AM", "12:00 PM - 03:00 PM", "06:00 PM - 09:00 PM" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -225,11 +221,6 @@ public class NewMember extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(closeBtn)
-                        .addGap(218, 218, 218)
-                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,38 +231,40 @@ public class NewMember extends javax.swing.JFrame {
                                     .addComponent(emailLbl)
                                     .addComponent(addressLbl)
                                     .addComponent(timingLbl)
-                                    .addComponent(jLabel4)
+                                    .addComponent(amountLbl)
                                     .addComponent(nameLbl)
                                     .addComponent(fNameLbl)
                                     .addComponent(cnicLbl))
                                 .addGap(45, 45, 45)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(numberTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                        .addComponent(emailTxt)
-                                        .addComponent(addressTxt)
-                                        .addComponent(amountTxt)
-                                        .addComponent(shiftCbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(fNameTxt)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(genderCbox, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(ageLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(nameTxt))
-                                    .addComponent(cnicTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(numberTxt)
+                                    .addComponent(emailTxt)
+                                    .addComponent(addressTxt)
+                                    .addComponent(amountTxt)
+                                    .addComponent(shiftCbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fNameTxt)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(genderCbox, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ageLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(nameTxt)
+                                    .addComponent(cnicTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(clearBtn)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(saveBtn))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(Lbl)
                                 .addGap(18, 18, 18)
                                 .addComponent(idLbl))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(clearBtn)
-                        .addGap(163, 163, 163)
-                        .addComponent(saveBtn)))
-                .addContainerGap(263, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addComponent(closeBtn)
+                        .addGap(218, 218, 218)
+                        .addComponent(jLabel1)))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,13 +316,13 @@ public class NewMember extends javax.swing.JFrame {
                     .addComponent(shiftCbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
+                    .addComponent(amountLbl)
                     .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearBtn)
                     .addComponent(saveBtn))
-                .addGap(49, 49, 49))
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,52 +352,57 @@ public class NewMember extends javax.swing.JFrame {
     }//GEN-LAST:event_nameTxtActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        setVisible(false);
-        new NewMember().setVisible(true);
+        int a = JOptionPane.showConfirmDialog(null, "Do you want to Clear?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            setVisible(false);
+            new NewMember().setVisible(true);
+        }
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null,"Do you want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0){
+        int a = JOptionPane.showConfirmDialog(null, "Do you want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
             setVisible(false);
             new Home().setVisible(true);
         }
     }//GEN-LAST:event_closeBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-        String id = idLbl.getText();
-        String name = nameTxt.getText();
-        String fatherName = fNameTxt.getText();
-        String gender = (String) genderCbox.getSelectedItem();
-        String age = ageTxt.getText();
-        String CNIC = cnicTxt.getText();
-        String mobileNo = numberTxt.getText();
-        String eMail = emailTxt.getText();
-        String address = addressTxt.getText();
-        String shift = (String) shiftCbox.getSelectedItem();
-        String monthlyFee = amountTxt.getText();
-        
-        try{
-            Connection con = getCon();
-            PreparedStatement ps = con.prepareStatement("Insert into newMember values (?,?,?,?,?,?,?,?,?,?,?)");
-            ps.setString (1,id);
-            ps.setString (2,name);
-            ps.setString (3,fatherName);
-            ps.setString (4,gender);
-            ps.setString (5,age);
-            ps.setString (6,CNIC);
-            ps.setString (7,mobileNo);
-            ps.setString (8,eMail);
-            ps.setString (9,address);
-            ps.setString (10,shift);
-            ps.setString (11,monthlyFee);
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Successfully Saved");
-            setVisible(false);
-            new NewMember().setVisible(true);
-        }
-        catch (Exception e){
-            JOptionPane.showMessageDialog(null,e);
+        int a = JOptionPane.showConfirmDialog(null, "Do you want to Save?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            String id = idLbl.getText();
+            String name = nameTxt.getText();
+            String fatherName = fNameTxt.getText();
+            String gender = (String) genderCbox.getSelectedItem();
+            String age = ageTxt.getText();
+            String CNIC = cnicTxt.getText();
+            String mobileNumber = numberTxt.getText();
+            String eMail = emailTxt.getText();
+            String address = addressTxt.getText();
+            String shift = (String) shiftCbox.getSelectedItem();
+            String fee = amountTxt.getText();
+
+            try {
+                Connection con = getCon();
+                PreparedStatement ps = con.prepareStatement("insert into newMember values (?,?,?,?,?,?,?,?,?,?,?)");
+                ps.setString(1, id);
+                ps.setString(2, name);
+                ps.setString(3, fatherName);
+                ps.setString(4, gender);
+                ps.setString(5, age);
+                ps.setString(6, CNIC);
+                ps.setString(7, mobileNumber);
+                ps.setString(8, eMail);
+                ps.setString(9, address);
+                ps.setString(10, shift);
+                ps.setString(11, fee);
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Successfully Saved");
+                setVisible(false);
+                new Home().setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
     }//GEN-LAST:event_saveBtnActionPerformed
 
@@ -449,6 +447,7 @@ public class NewMember extends javax.swing.JFrame {
     private javax.swing.JTextField addressTxt;
     private javax.swing.JLabel ageLbl;
     private javax.swing.JTextField ageTxt;
+    private javax.swing.JLabel amountLbl;
     private javax.swing.JTextField amountTxt;
     private javax.swing.JButton clearBtn;
     private javax.swing.JButton closeBtn;
@@ -462,7 +461,6 @@ public class NewMember extends javax.swing.JFrame {
     private javax.swing.JLabel genderLbl;
     private javax.swing.JLabel idLbl;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JTextField nameTxt;
