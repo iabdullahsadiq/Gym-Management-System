@@ -15,7 +15,7 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        mainLbl = new javax.swing.JLabel();
         upanddltBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
         listofMemBtn = new javax.swing.JButton();
@@ -34,9 +34,9 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 118, 221));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 1, 42)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Welcome to Gym Management System");
+        mainLbl.setFont(new java.awt.Font("Britannic Bold", 1, 42)); // NOI18N
+        mainLbl.setForeground(new java.awt.Color(255, 255, 255));
+        mainLbl.setText("Welcome to Gym Management System");
 
         upanddltBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update & delete member.png"))); // NOI18N
         upanddltBtn.setPreferredSize(new java.awt.Dimension(65, 65));
@@ -67,6 +67,11 @@ public class Home extends javax.swing.JFrame {
         listofMemBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/list of members.png"))); // NOI18N
         listofMemBtn.setMinimumSize(new java.awt.Dimension(85, 85));
         listofMemBtn.setPreferredSize(new java.awt.Dimension(65, 65));
+        listofMemBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listofMemBtnMouseClicked(evt);
+            }
+        });
         listofMemBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listofMemBtnActionPerformed(evt);
@@ -160,7 +165,7 @@ public class Home extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(logoutLbl))
                             .addComponent(logOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mainLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
@@ -173,7 +178,7 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logoutLbl)
                 .addGap(68, 68, 68)
-                .addComponent(jLabel1)
+                .addComponent(mainLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(upanddltBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,6 +250,10 @@ public class Home extends javax.swing.JFrame {
         new UpdateDeleteMember().setVisible(true);
     }//GEN-LAST:event_upanddltBtnMouseClicked
 
+    private void listofMemBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listofMemBtnMouseClicked
+        new ListOfMembers().setVisible(true);
+    }//GEN-LAST:event_listofMemBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -282,12 +291,12 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton listofMemBtn;
     private javax.swing.JLabel listofMemberLbl;
     private javax.swing.JButton logOutBtn;
     private javax.swing.JLabel logoutLbl;
+    private javax.swing.JLabel mainLbl;
     private javax.swing.JButton newMemberBtn;
     private javax.swing.JLabel newMemberLbl;
     private javax.swing.JButton paymentBtn;

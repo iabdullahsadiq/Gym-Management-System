@@ -57,7 +57,7 @@ public class NewMember extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         closeBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        mainLbl = new javax.swing.JLabel();
         Lbl = new javax.swing.JLabel();
         nameLbl = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
@@ -95,10 +95,10 @@ public class NewMember extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 1, 30)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 118, 221));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new member.png"))); // NOI18N
-        jLabel1.setText("New Member");
+        mainLbl.setFont(new java.awt.Font("Britannic Bold", 1, 30)); // NOI18N
+        mainLbl.setForeground(new java.awt.Color(0, 118, 221));
+        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new member.png"))); // NOI18N
+        mainLbl.setText("New Member");
 
         Lbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lbl.setForeground(new java.awt.Color(0, 118, 221));
@@ -263,7 +263,7 @@ public class NewMember extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(closeBtn)
                         .addGap(218, 218, 218)
-                        .addComponent(jLabel1)))
+                        .addComponent(mainLbl)))
                 .addContainerGap(284, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -275,7 +275,7 @@ public class NewMember extends javax.swing.JFrame {
                         .addComponent(closeBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)))
+                        .addComponent(mainLbl)))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lbl)
@@ -460,8 +460,8 @@ public class NewMember extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> genderCbox;
     private javax.swing.JLabel genderLbl;
     private javax.swing.JLabel idLbl;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel mainLbl;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JLabel numberLbl;

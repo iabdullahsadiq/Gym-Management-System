@@ -44,8 +44,8 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         closeBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        mainLbl = new javax.swing.JLabel();
+        idLbl = new javax.swing.JLabel();
         idTxt = new javax.swing.JTextField();
         searchBtn = new javax.swing.JButton();
         nameLbl = new javax.swing.JLabel();
@@ -84,14 +84,14 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 1, 28)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 118, 221));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update & delete member.png"))); // NOI18N
-        jLabel1.setText("Update or Delete Members");
+        mainLbl.setFont(new java.awt.Font("Britannic Bold", 1, 28)); // NOI18N
+        mainLbl.setForeground(new java.awt.Color(0, 118, 221));
+        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update & delete member.png"))); // NOI18N
+        mainLbl.setText("Update or Delete Members");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 118, 221));
-        jLabel2.setText("Member ID:");
+        idLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        idLbl.setForeground(new java.awt.Color(0, 118, 221));
+        idLbl.setText("Member ID:");
 
         idTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         idTxt.setForeground(new java.awt.Color(255, 0, 0));
@@ -218,14 +218,14 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(closeBtn)
                         .addGap(136, 136, 136)
-                        .addComponent(jLabel1))
+                        .addComponent(mainLbl))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(208, 208, 208)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
+                                        .addComponent(idLbl)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(nameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,12 +270,12 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(closeBtn))
-                    .addComponent(jLabel1))
+                    .addComponent(mainLbl))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
+                        .addComponent(idLbl)
                         .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -499,10 +499,10 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
     private javax.swing.JTextField fNameTxt;
     private javax.swing.JLabel genderLbl;
     private javax.swing.JTextField genderTxt;
+    private javax.swing.JLabel idLbl;
     private javax.swing.JTextField idTxt;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel mainLbl;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JLabel numberLbl;
