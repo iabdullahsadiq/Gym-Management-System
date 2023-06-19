@@ -186,7 +186,7 @@ public class NewMember extends javax.swing.JFrame {
         saveBtn.setBackground(new java.awt.Color(0, 118, 221));
         saveBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        saveBtn.setText("Save");
+        saveBtn.setText("Add");
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBtnActionPerformed(evt);
@@ -352,7 +352,7 @@ public class NewMember extends javax.swing.JFrame {
     }//GEN-LAST:event_nameTxtActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Clear?", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Clear all?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
             setVisible(false);
             new NewMember().setVisible(true);
@@ -360,15 +360,12 @@ public class NewMember extends javax.swing.JFrame {
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0) {
             setVisible(false);
             new Home().setVisible(true);
-        }
     }//GEN-LAST:event_closeBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Save?", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Add Member?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
             String id = idLbl.getText();
             String name = nameTxt.getText();
@@ -397,9 +394,9 @@ public class NewMember extends javax.swing.JFrame {
                 ps.setString(10, shift);
                 ps.setString(11, fee);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Successfully Saved");
+                JOptionPane.showMessageDialog(null, "Successfully Added.");
                 setVisible(false);
-                new Home().setVisible(true);
+                new NewMember().setVisible(true);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }

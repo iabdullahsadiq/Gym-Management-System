@@ -126,11 +126,8 @@ public class ListOfMembers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0) {
             setVisible(false);
             new Home().setVisible(true);
-        }
     }//GEN-LAST:event_closeBtnActionPerformed
 
     /**

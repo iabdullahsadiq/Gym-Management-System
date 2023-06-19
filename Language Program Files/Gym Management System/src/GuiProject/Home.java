@@ -232,7 +232,7 @@ public class Home extends javax.swing.JFrame {
 
     private void logOutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutBtnMouseClicked
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null,"Do you want to Logout?","Select",JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null,"Logout?","Select",JOptionPane.YES_NO_OPTION);
         if (a == 0){
             setVisible(false);
             new Login().setVisible(true);

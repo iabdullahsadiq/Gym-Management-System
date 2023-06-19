@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GuiProject;
+
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -14,30 +15,30 @@ import java.util.Date;
  * @author ESHOP
  */
 public class Payment extends javax.swing.JFrame {
-    
-    public void tableDetails(){
-        DefaultTableModel dtm = (DefaultTableModel)paymentTbl.getModel();
+
+    public void tableDetails() {
+        DefaultTableModel dtm = (DefaultTableModel) paymentTbl.getModel();
         dtm.setRowCount(0);
         String id = idTxt.getText();
-        try{
+        try {
             Connection con = NewMember.getCon();
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select *from Payment where id = '"+id+"'");
-            while (rs.next()){
-                dtm.addRow(new Object[]{rs.getString(2),rs.getString(3)});
+            ResultSet rs = st.executeQuery("select *from Payment where id = '" + id + "'");
+            while (rs.next()) {
+                dtm.addRow(new Object[]{rs.getString(2), rs.getString(3)});
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    public void date(){
-            SimpleDateFormat dFormat = new SimpleDateFormat("MMM-YYYY");
-            Date date = new Date ();
-            String month = dFormat.format(date);
-            dateLbl.setText(month);
-            
-        }
+
+    public void date() {
+        SimpleDateFormat dFormat = new SimpleDateFormat("MMM-YYYY");
+        Date date = new Date();
+        String month = dFormat.format(date);
+        dateLbl.setText(month);
+
+    }
 
     /**
      * Creates new form Payment
@@ -47,6 +48,10 @@ public class Payment extends javax.swing.JFrame {
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         date();
+        nameTxt.setEditable(false);
+        numberTxt.setEditable(false);
+        emailTxt.setEditable(false);
+        amountTxt.setEditable(false);
     }
 
     /**
@@ -109,6 +114,11 @@ public class Payment extends javax.swing.JFrame {
         searchBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search.png"))); // NOI18N
         searchBtn.setText("Search");
         searchBtn.setPreferredSize(new java.awt.Dimension(92, 23));
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 118, 221));
@@ -124,8 +134,8 @@ public class Payment extends javax.swing.JFrame {
 
         nameTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         nameTxt.setForeground(new java.awt.Color(0, 118, 221));
-        nameTxt.setMinimumSize(new java.awt.Dimension(130, 22));
-        nameTxt.setPreferredSize(new java.awt.Dimension(130, 22));
+        nameTxt.setMinimumSize(new java.awt.Dimension(130, 25));
+        nameTxt.setPreferredSize(new java.awt.Dimension(130, 25));
 
         numberLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         numberLbl.setForeground(new java.awt.Color(0, 118, 221));
@@ -133,9 +143,12 @@ public class Payment extends javax.swing.JFrame {
 
         numberTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         numberTxt.setForeground(new java.awt.Color(0, 118, 221));
+        numberTxt.setMinimumSize(new java.awt.Dimension(64, 25));
+        numberTxt.setPreferredSize(new java.awt.Dimension(64, 25));
 
         emailTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         emailTxt.setForeground(new java.awt.Color(0, 118, 221));
+        emailTxt.setPreferredSize(new java.awt.Dimension(64, 25));
 
         emailLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         emailLbl.setForeground(new java.awt.Color(0, 118, 221));
@@ -147,6 +160,7 @@ public class Payment extends javax.swing.JFrame {
 
         amountTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         amountTxt.setForeground(new java.awt.Color(0, 118, 221));
+        amountTxt.setPreferredSize(new java.awt.Dimension(64, 25));
 
         clearBtn.setBackground(new java.awt.Color(0, 118, 221));
         clearBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -161,7 +175,12 @@ public class Payment extends javax.swing.JFrame {
         saveBtn.setBackground(new java.awt.Color(0, 118, 221));
         saveBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        saveBtn.setText("Save");
+        saveBtn.setText("Pay");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveBtnActionPerformed(evt);
+            }
+        });
 
         paymentTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -185,7 +204,7 @@ public class Payment extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 43, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
@@ -198,7 +217,6 @@ public class Payment extends javax.swing.JFrame {
                         .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(numberLbl)
                             .addComponent(emailLbl)
                             .addComponent(amountLbl)
                             .addComponent(nameLbl))
@@ -206,12 +224,15 @@ public class Payment extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(numberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(clearBtn)
                         .addGap(76, 76, 76)
-                        .addComponent(saveBtn)))
+                        .addComponent(saveBtn))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(numberLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(numberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -239,12 +260,12 @@ public class Payment extends javax.swing.JFrame {
                             .addComponent(dateLbl))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nameLbl)
-                            .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameLbl))
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(numberLbl)
-                            .addComponent(numberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(numberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberLbl))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(emailLbl)
@@ -276,17 +297,70 @@ public class Payment extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0) {
-            setVisible(false);
-            new Home().setVisible(true);
-        }
+        setVisible(false);
+        new Home().setVisible(true);
     }//GEN-LAST:event_closeBtnActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        setVisible(false);
-        new Payment().setVisible(true);
+        int a = JOptionPane.showConfirmDialog(null, "Clear all?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            setVisible(false);
+            new Payment().setVisible(true);
+        }
     }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        tableDetails();
+        int checkid = 0;
+        String id = idTxt.getText();
+        String month = dateLbl.getText();
+        try {
+            Connection con = NewMember.getCon();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select *from newMember where id = '" + id + "'");
+            while (rs.next()) {
+                checkid = 1;
+                idTxt.setEditable(false);
+                nameTxt.setText(rs.getString(2));
+                numberTxt.setText(rs.getString(7));
+                emailTxt.setText(rs.getString(8));
+                amountTxt.setText(rs.getString(11));
+            }
+            if (checkid == 0) {
+                JOptionPane.showMessageDialog(null, "Member id does not exist!");
+            }
+            ResultSet rs1 = st.executeQuery("select *from Payment inner join newMember where Payment.month = '" + month + "' and Payment.id = '" + id + "' and newMember.id = '" + id + "'");
+            while (rs1.next()) {
+                saveBtn.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Monthly Fee is already paid for this month");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        int a = JOptionPane.showConfirmDialog(null, "Pay Amount?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            String id = idTxt.getText();
+            String month = dateLbl.getText();
+            String amount = amountTxt.getText();
+            try {
+                Connection con = NewMember.getCon();
+                PreparedStatement ps = con.prepareStatement("insert into Payment values(?,?,?)");
+                ps.setString(1, id);
+                ps.setString(2, month);
+                ps.setString(3, amount);
+                ps.executeUpdate();
+                tableDetails();
+                JOptionPane.showMessageDialog(null, "Successfully Paid.");
+                setVisible(false);
+                new Payment().setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }//GEN-LAST:event_saveBtnActionPerformed
 
     /**
      * @param args the command line arguments

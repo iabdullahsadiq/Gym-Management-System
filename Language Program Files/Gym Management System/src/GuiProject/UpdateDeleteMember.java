@@ -338,15 +338,12 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0) {
             setVisible(false);
             new Home().setVisible(true);
-        }
     }//GEN-LAST:event_closeBtnActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Clear?", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Clear all?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
             setVisible(false);
             new UpdateDeleteMember().setVisible(true);
@@ -396,7 +393,7 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Update?", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Update info?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
             String id = idTxt.getText();
             String name = nameTxt.getText();
@@ -420,7 +417,7 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
                 ps.setString(8, fee);
                 ps.setString(9, id);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Successfullty Updated");
+                JOptionPane.showMessageDialog(null, "Successfullty Updated.");
                 setVisible(false);
                 new UpdateDeleteMember().setVisible(true);
             } catch (Exception e) {
@@ -430,7 +427,7 @@ public class UpdateDeleteMember extends javax.swing.JFrame {
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to delete Member?", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Delete Member?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
             String id = idTxt.getText();
             try {
