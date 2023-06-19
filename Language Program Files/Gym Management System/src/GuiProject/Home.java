@@ -80,6 +80,11 @@ public class Home extends javax.swing.JFrame {
 
         paymentBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/payment.png"))); // NOI18N
         paymentBtn.setPreferredSize(new java.awt.Dimension(65, 65));
+        paymentBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                paymentBtnMouseClicked(evt);
+            }
+        });
         paymentBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paymentBtnActionPerformed(evt);
@@ -253,6 +258,10 @@ public class Home extends javax.swing.JFrame {
     private void listofMemBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listofMemBtnMouseClicked
         new ListOfMembers().setVisible(true);
     }//GEN-LAST:event_listofMemBtnMouseClicked
+
+    private void paymentBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paymentBtnMouseClicked
+        new Payment().setVisible(true);
+    }//GEN-LAST:event_paymentBtnMouseClicked
 
     /**
      * @param args the command line arguments
